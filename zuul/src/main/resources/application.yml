@@ -1,0 +1,14 @@
+server:
+  port: 8030
+spring:
+  application:
+    name: gateway
+#  main: #遇到重名的覆盖进行注册
+ #   allow-bean-definition-overriding: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes: #给服务提供者提供映射
+    provider: /p/**  #给服务提供者起个别名，相当于不需要通过服务提供者，只需要通过网关访问即可

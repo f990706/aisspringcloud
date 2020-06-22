@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: configclient
+    #
+  profiles:
+    active: dev
+
+  cloud:
+    config:
+      uri: http://localhost:8762 #本地configserver的访问路径
+      fail-fast: true  #设置客户端优先判断configserver获取是否正常
+      # c通过spring.application.name结合 spring。profiles。active拼接目标配置文件名，比如ConfigClient-dev.yml
+        # 在configserver查找该文件
